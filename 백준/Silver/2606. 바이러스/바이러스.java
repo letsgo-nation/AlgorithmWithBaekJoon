@@ -13,6 +13,8 @@ public class Main {
 
         // 그래프를 나타내는 인접 리스트를 생성
         ArrayList<Integer>[] graph = new ArrayList[N + 1];
+
+				// 네트워크 연결 정보 읽기
         for (int i = 1; i <= N; i++) {
             graph[i] = new ArrayList<>();
         }
@@ -32,21 +34,24 @@ public class Main {
         // DFS를 이용한 웜 바이러스 전파 탐색
         Stack<Integer> stack = new Stack<>();
         stack.push(1); // 1번 컴퓨터부터 시작
-        visited[1] = true;
+        visited[1] = true; // 1번 컴퓨터를 방문
         int count = 0; // 웜 바이러스에 걸리는 컴퓨터 수를 저장하는 변수
 
         while (!stack.isEmpty()) {
             int current = stack.pop();
             count++;
 
+					// 현재 컴퓨터에 연결된 모든 이웃 컴퓨터에 대해 반복
             for (int neighbor : graph[current]) {
+
+					// 이웃 컴퓨터를 방문하지 않았다면 다음 단계
                 if (!visited[neighbor]) {
                     stack.push(neighbor);
                     visited[neighbor] = true;
                 }
             }
         }
-
+				// 웜 바이러스에 걸린 컴퓨터 수를 출력
         System.out.println(count - 1); // 1번 컴퓨터 자체는 웜 바이러스에 걸린 것으로 세지 않음
     }
 }
