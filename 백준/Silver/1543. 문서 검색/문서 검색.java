@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,16 +17,18 @@ class Main {
     // 단어가 반복된 수를 찾는 함수
     public static int findWordsWithoutOverlapping(String document, String word) {
         int count = 0; // 단어가 반복된 수 초기화
-        int index = 0;
-        while (index < document.length()) {
-            int foundIndex = document.indexOf(word, index);
+        int letterNumberOfWord = 0; // 단어의 자리 수
+        while (letterNumberOfWord < document.length()) {
+            int foundIndex = document.indexOf(word, letterNumberOfWord);
+                // .indexOf((String str, int fromIndex)
+                // .indexOf( "찾을 특정 문자" , "시작할 위치")
+                // indexOf() 는 특정 문자나 문자열이 앞에서부터 처음 발견되는 인덱스를 반환
             if (foundIndex == -1) {
-                // indexOf() 는 특정 문자나 문자열이 앞에서부터 처음 발견되는 인덱스를 반환하며
                 // 만약 찾지 못했을 경우 "-1"을 반환한다.
                 break;
             }
             count++;
-            index = foundIndex + word.length();
+            letterNumberOfWord = foundIndex + word.length();
         }
         return count;
     }
