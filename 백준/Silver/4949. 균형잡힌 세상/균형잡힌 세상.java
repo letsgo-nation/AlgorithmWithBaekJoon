@@ -12,9 +12,9 @@ public class Main {
 
         while (true) {
             String str = br.readLine();
-            //System.out.println(s);
+            
             if (str.equals(".")) break;
-            int flag = 1;
+            int num = 1;
             char c[] = str.toCharArray();
             stack.clear();
 
@@ -22,13 +22,13 @@ public class Main {
 
                 if (c[j] == '(' || c[j] == '[') stack.push(c[j]);
                 else if (c[j] == ')') {
-                    if (stack.isEmpty() ||  stack.pop() == '[') flag = 0;
+                    if (stack.isEmpty() ||  stack.pop() == '[') num = 0;
                 }
                 else if (c[j] == ']') {
-                    if (stack.isEmpty() || stack.pop() == '(') flag = 0;
+                    if (stack.isEmpty() || stack.pop() == '(') num = 0;
                 }
             }
-            if (flag == 1 && stack.isEmpty()) sb.append("yes\n");
+            if (num == 1 && stack.isEmpty()) sb.append("yes\n");
             else sb.append("no\n");
         }
         System.out.println(sb);
