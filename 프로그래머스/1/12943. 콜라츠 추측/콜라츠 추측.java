@@ -1,3 +1,10 @@
+// if num is even -> /2,
+// if num is odd -> *3+1
+// repeat until the value is 1
+
+// if num is 1 -> answer is 0
+// if the function repeats more than 500 times, return -1
+
 class Solution {
     public int solution(int num) {
         int answer = 0;
