@@ -8,10 +8,6 @@
 class Solution {
     public int solution(int num) {
         int answer = 0;
-        
-        if (num==1) {
-            return answer;
-        }
 
         for (int i=1; i<501; i++) {
             if (num==1) {
