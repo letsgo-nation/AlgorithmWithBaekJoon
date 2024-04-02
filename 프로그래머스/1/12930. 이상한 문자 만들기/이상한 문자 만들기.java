@@ -6,7 +6,8 @@ class Solution {
         StringBuilder answer = new StringBuilder();
         boolean isEven = true; // 시작은 짝수로 설정
 
-        for (char ch : s.toCharArray()) {
+         for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
             if (ch == ' ') {
                 answer.append(ch); // 공백은 그대로
                 isEven = true; // 공백을 만나면 다음 문자는 다시 짝수로 시작
