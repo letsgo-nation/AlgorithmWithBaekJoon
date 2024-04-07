@@ -24,9 +24,9 @@ public class Main {
         br.close();
     }
 
-    // 조합 계산 메소드
+    // 조합 계산 메소드 - 조합 C(n, r)을 계산 - nCr
     public static int combination(int n, int r) {
-        if (memo[n][r] > 0) { // 이미 계산한 값이 있다면 해당 값 반환
+        if (memo[n][r] > 0) { // 이미 계산한 값이 있다면 해당 값 반환 - 중복 계산 피하기
             return memo[n][r];
         }
         
